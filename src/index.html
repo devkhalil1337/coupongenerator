@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+</head>
+<body>
+    <div class="container">
+        <div class="row w-100">
+          <div class="col-sm-5">
+            <div  class="text-center">
+              <div>
+                  <span style="background-color: black;color: white;padding: 5px;" id="amountLogo"> 09.09   </span>              
+              </div>
+              <div class="p-2 ">
+                TEMAXIA: 
+                <span>330</span>
+              </div>
+              <svg id="barcode"></svg>
+              <div class="description">
+                adasd
+              </div>
+              <div class="row dateTime">
+                <div class="col-6">
+                  <span id="date"></span>
+                </div>
+                <div class="col-6">
+                  <span id="time"></span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+          <div class="col-sm-5" style="top: 6rem;">
+            <form id="generate">
+              <div class="form-group">
+                <label for="Amount" class="sr-only">Amount</label>
+                <input type="text" class="form-control" id="amount" placeholder="Amount">
+              </div>
+              <div class="form-group">
+                <label for="description" class="sr-only">Description</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">Generate</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+<script>
+  
+</script>
+<script src="./js/script.js"></script>
+</html>

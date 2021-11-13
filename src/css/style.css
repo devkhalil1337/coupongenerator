@@ -1,0 +1,23 @@
+body,
+html {
+  height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+#barcode{
+    width: 100%;
+}
+  .description{
+      padding: 2px;
+  }
+  .dateTime{
+    border: 1px solid #010203!important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+
+  }
