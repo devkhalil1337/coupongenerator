@@ -19,7 +19,8 @@ $( document ).ready(function() {
 		if(description && description.length > 0)
 			$(".description").text(description);
 		// if(amount && amount > 0){
-		//     $("#amountLogo").text("a2")
+		// 	let texmaxia = amount/0.03
+		//     $("#temaxia").text(texmaxia)
 		// }
 		 let couponDate = new Date($("#datetimepicker1").val());
 
@@ -27,24 +28,19 @@ $( document ).ready(function() {
 
 		const staticNumbers =  $("#staticDigits").val(); ;
 
-
-
+		
+		
 		today = new Date();
-
-		let date = couponDate.getHours() + "" + couponDate.getMinutes() + "" + couponDate.getSeconds() + "" + couponDate.getFullYear() + "" + (couponDate.getMonth() + 1) + "" + couponDate.getDate();
-
 		_time = setZero(today.getHours()) + ":" + setZero(today.getMinutes()) + ":" + setZero(today.getSeconds())
-
-
 		$("#time").text(_time)
 		_date = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear()
-
 		$("#date").text(_date)
+		
+		
+		
+		//Date format Hours | Minutes | Seconds | Year | Month | Day
+		let date = couponDate.getHours() + "" + couponDate.getMinutes() + "" + couponDate.getSeconds() + "" + couponDate.getFullYear() + "" + (couponDate.getMonth() + 1) + "" + couponDate.getDate();
 		JsBarcode("#barcode", staticNumbers + date + amount);
-
-
-
-
 		event.preventDefault();
 		// $("#generate").trigger('reset');
 	})
