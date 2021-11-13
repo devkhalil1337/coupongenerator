@@ -27,3 +27,7 @@ html {
 	border-left: 0px !important;
 	border-right: 0px !important;
 }
+
+#htmltoimage{
+	padding: 20px;
+}
