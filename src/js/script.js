@@ -1,7 +1,10 @@
 
 
 $( document ).ready(function() {
-	$('#datetimepicker1').datetimepicker();
+	$('#datetimepicker1').datetimepicker({
+        defaultDate: moment(),
+        sideBySide: true
+        });
 	JsBarcode("#barcode", "98760218018426061121990");
 	let today = new Date();
 	
@@ -18,10 +21,17 @@ $( document ).ready(function() {
 		let description = $("#description").val();
 		if(description && description.length > 0)
 			$(".description").text(description);
-		// if(amount && amount > 0){
-		// 	let texmaxia = amount/0.03
-		//     $("#temaxia").text(texmaxia)
-		// }
+		if(amount && amount > 0){
+			let texmaxia = String(amount/0.03);
+		    $("#temaxia").text(texmaxia.substr(0,3));
+			let amountLogo = String(amount);
+			let _firstDigits = amountLogo.substr(0,1);
+			_firstDigits = setZero(_firstDigits);
+			let _secondDigits = amountLogo.substr(1,4);
+			_secondDigits = setZero(_secondDigits);
+		    $("#amountLogo").text(`${_firstDigits}.${_secondDigits}`);
+			amountLogo
+		}
 		 let couponDate = new Date($("#datetimepicker1").val());
 
 

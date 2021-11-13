@@ -14,7 +14,7 @@ html {
 	width: 100%;
 }
 
-#time, #date,.static-text {
+#time, #date,.static-text ,#temaxia{
 	font-weight: 500;
 }
 
