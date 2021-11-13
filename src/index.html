@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+
+
     <link rel="stylesheet" href="css/style.css">
+    <script>
+  
+    </script>
   </head>
 </head>
 <body>
@@ -24,8 +28,9 @@
                 <span>330</span>
               </div>
               <svg id="barcode"></svg>
+              <div class="mt-5"></div>
+              <span class="static-text" style="text-decoration: underline;"></span>
               <div class="description">
-                adasd
               </div>
               <div class="row dateTime">
                 <div class="col-6">
@@ -42,13 +47,26 @@
           <div class="col-sm-5" style="top: 6rem;">
             <form id="generate">
               <div class="form-group">
-                <label for="Amount" class="sr-only">Amount</label>
-                <input type="text" class="form-control" id="amount" placeholder="Amount">
+                <label for="date">Date and Time</label>
+                <div class='input-group date'>
+                  <input type='text' class="form-control" id='datetimepicker1' name="date"/>
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
               </div>
               <div class="form-group">
+                <label for="staticDigits">First Nine digit</label>
+                <input type="text" class="form-control" id="staticDigits" placeholder="First Nine digit">
+              </div>
+              <div class="form-group">
+                <label for="Amount">Last three digit</label>
+                <input type="text" class="form-control" id="amount" placeholder="Last three digit">
+              </div>
+              <!-- <div class="form-group">
                 <label for="description" class="sr-only">Description</label>
                 <textarea class="form-control" id="description" rows="3"></textarea>
-              </div>
+              </div> -->
               <button type="submit" class="btn btn-primary mb-2">Generate</button>
             </form>
           </div>
@@ -56,8 +74,19 @@
       </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
 <script>
   
 </script>
 <script src="./js/script.js"></script>
+<script type="text/javascript">
+  $(function () {
+      $('#datetimepicker1').datetimepicker();
+  });
+</script>
 </html>
