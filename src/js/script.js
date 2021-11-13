@@ -43,10 +43,24 @@ $( document ).ready(function() {
 		JsBarcode("#barcode", staticNumbers + date + amount);
 		event.preventDefault();
 		// $("#generate").trigger('reset');
+	});
+
+	$("#Download").click(function(){
+		let container = document.getElementById("htmltoimage"); // full page 
+		html2canvas(container,{allowTaint : true}).then(function(canvas) {
+		
+			let link = document.createElement("a");
+			document.body.appendChild(link);
+			link.download = "coupon.png";
+			link.href = canvas.toDataURL("image/png");
+			link.target = '_blank';
+			link.click();
+		});
 	})
 	
 	function setZero(n) {
 		return n < 10 ? "0" + n : n;
 	}
+
 });
 
