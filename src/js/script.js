@@ -57,7 +57,7 @@ $( document ).ready(function() {
 
 	$("#Download").click(function(){
 		let container = document.getElementById("htmltoimage"); // full page 
-		html2canvas(container,{allowTaint : true}).then(function(canvas) {
+		html2canvas(container,{ allowTaint: true, useCORS: true, backgroundColor: "rgba(0,0,0,0)", removeContainer: true, x: 0, y: 0, width: 474, height: 722 }).then(function(canvas) {
 		
 			let link = document.createElement("a");
 			document.body.appendChild(link);
