@@ -29,7 +29,7 @@ $( document ).ready(function() {
 			_firstDigits = setZero(_firstDigits);
 			let _secondDigits = amountLogo.substr(1,4);
 			_secondDigits = setZero(_secondDigits);
-		    $("#amountLogo").text(`${_firstDigits}.${_secondDigits}`);
+		    $("#amountLogo").text(`${_firstDigits}_${_secondDigits}`);
 			amountLogo
 		}
 		 let couponDate = new Date($("#datetimepicker1").val());
@@ -41,9 +41,9 @@ $( document ).ready(function() {
 		
 		
 		today = new Date();
-		_time = setZero(today.getHours()) + ":" + setZero(today.getMinutes()) + ":" + setZero(today.getSeconds())
+		_time = setZero(couponDate.getHours()) + ":" + setZero(couponDate.getMinutes()) + ":" + setZero(couponDate.getSeconds())
 		$("#time").text(_time)
-		_date = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear()
+		_date = couponDate.getDate() + "/" + (couponDate.getMonth() + 1) + "/" + couponDate.getFullYear()
 		$("#date").text(_date)
 		
 		
@@ -57,7 +57,7 @@ $( document ).ready(function() {
 
 	$("#Download").click(function(){
 		let container = document.getElementById("htmltoimage"); // full page 
-		html2canvas(container,{ allowTaint: true, useCORS: true, backgroundColor: "rgba(0,0,0,0)", removeContainer: true, x: 0, y: 0, width: 474, height: 722 }).then(function(canvas) {
+		html2canvas(container,{ allowTaint: true,scale:2 }).then(function(canvas) {
 		
 			let link = document.createElement("a");
 			document.body.appendChild(link);
