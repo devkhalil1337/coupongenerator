@@ -57,7 +57,9 @@ $( document ).ready(function() {
 
 	$("#Download").click(function(){
 		let container = document.getElementById("htmltoimage"); // full page 
-		html2canvas(container,{ allowTaint: true,scale:2 }).then(function(canvas) {
+		let scale = $('#scale').find(":selected").text();
+		console.log(scale)
+		html2canvas(container,{ allowTaint: true,scale:scale }).then(function(canvas) {
 		
 			let link = document.createElement("a");
 			document.body.appendChild(link);
