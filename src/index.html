@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link href="http://fonts.cdnfonts.com/css/fixation" rel="stylesheet">
 
 
     <link rel="stylesheet" href="css/style.css">
@@ -20,26 +21,35 @@
         <div class="row w-100">
           <div class="col-sm-5">
             <div  class="text-center" id="htmltoimage">
-              <div>
-                  <span id="amountLogo"> 00_03   </span>              
+              <div class="static-image">
+                <img src="img/9961.bmp" alt="" id="coupon-logo">
               </div>
-              <div class="p-2" style="font-weight: 500;">
-                TEMAXIA: 
-                <span id="temaxia">1</span>
-              </div>
-              <svg id="barcode"></svg>
-              <div class="mt-1"></div>
-              <span class="static-text" style="text-decoration: underline;">
-                Το παρόν κουπόνι μπορεί να εξαργυρωθεί:
-              </span>
-              <div class="description">
-              </div>
-              <div class="row dateTime">
-                <div class="col-6">
-                  <span id="date"></span>
+              <div class="bar-code">
+                <div class="pt-2">
+                    <span id="amountLogo"> 00 _ 03  </span>              
                 </div>
-                <div class="col-6">
-                  <span id="time"></span>
+                <div class="mt-4" >
+                  <span style="font-weight: 900;"> TEMAXIA: </span>
+                  <span id="temaxia">1</span>
+                </div>
+                <svg id="barcode"></svg>
+                <div class="mt-1"></div>
+                <span class="static-text" style="text-decoration: underline;">
+                  Το παρόν κουπόνι μπορεί να εξαργυρωθεί:
+                </span>
+                <div class="description">
+                  (α) ΜΟΝΟστο κατάστημα έκδοσης αυτού, το οποίο αναγράφεται στο πάνω τμήμα του. <br>
+                  (β) ΜΟΝΟ έως και 30 ημέρες από την ημερομηνία έκδοσης του, η οποία αναγράφεται στο κάτω τμήμα αυτού. Μετά την πάροδο του εν λόγω χρονικού διαστήματος ΔΕΝ μπορεί να
+  εξαργυρωθεί το παρόν κουπόνι.
+                  <!-- <img src="img/bottom_996.bmp" alt=""> -->
+                </div>
+                <div class="row dateTime">
+                  <div class="col-6">
+                    <span id="date"></span>
+                  </div>
+                  <div class="col-6">
+                    <span id="time"></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -48,6 +58,18 @@
         </div>
           <div class="col-sm-5" style="top: 6rem;">
             <form id="generate">
+              <div class="form-group">
+                <label for="type">Coupon Type</label>
+                <select name="type" class="form-control" id="type">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="coupon-margin">Coupon Space</label>
+                <input type="number" class="form-control" name="coupon-margin" id="coupon-margin">
+              </div>
               <div class="form-group">
                 <label for="scale">Coupon Size (Scale)</label>
                 <select name="scale" class="form-control" id="scale">
@@ -73,10 +95,10 @@
                 <label for="Amount">Last three digit</label>
                 <input type="text" class="form-control" id="amount" placeholder="Last three digit">
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="description">Coupon Description</label>
                 <textarea class="form-control" id="description" rows="3"></textarea>
-              </div>
+              </div> -->
               <button type="submit" class="btn btn-primary mb-2">Generate</button>
               <button type="button" class="btn btn-primary mb-2" id="Download">Download</button>
             </form>

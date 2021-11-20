@@ -5,7 +5,8 @@ $( document ).ready(function() {
         defaultDate: moment(),
         sideBySide: true
         });
-	JsBarcode("#barcode", "98760218018426061121990");
+		$('#coupon-logo').attr('src', 'img/1.bmp');
+	JsBarcode("#barcode", "98760218018426061121990",{fontOptions:"bold"});
 	let today = new Date();
 	
 	_time = setZero(today.getHours()) + ":" + setZero(today.getMinutes()) + ":" + setZero(today.getSeconds())
@@ -18,9 +19,9 @@ $( document ).ready(function() {
 	$("#generate").submit(function(event) {
 		// alert( "Handler for .submit() called." );
 		let amount = $("#amount").val()		
-		let description = $("#description").val();
-		if(description && description.length > 0)
-			$(".description").text(description);
+		// let description = $("#description").val();
+		// if(description && description.length > 0)
+		// 	$(".description").text(description);
 		if(amount && amount > 0){
 			let texmaxia = String(amount/0.03);
 		    $("#temaxia").text(texmaxia.substr(0,3));
@@ -48,8 +49,8 @@ $( document ).ready(function() {
 		
 		
 		
-		//Date format Hours | Minutes | Seconds | Year | Month | Day
-		let date = couponDate.getHours() + "" + couponDate.getMinutes() + "" + couponDate.getSeconds() + "" + couponDate.getFullYear() + "" + (couponDate.getMonth() + 1) + "" + couponDate.getDate();
+		//Date format Hours | Minutes | Seconds | Day | Month | Year
+		let date = setZero(couponDate.getHours()) + "" + setZero(couponDate.getMinutes()) + "" + setZero(couponDate.getMilliseconds()) + "" + setZero(couponDate.getDate()) + "" + setZero((couponDate.getMonth() + 1)) + "" + couponDate.getFullYear();
 		JsBarcode("#barcode", staticNumbers + date + amount);
 		event.preventDefault();
 		// $("#generate").trigger('reset');
@@ -68,7 +69,20 @@ $( document ).ready(function() {
 			link.target = '_blank';
 			link.click();
 		});
-	})
+	});
+
+
+	$("#coupon-margin").on("change paste keyup", function() {
+		console.log($(this).val()); 
+		$(".static-image").css("margin-bottom",$(this).val() + "px")
+	 });
+
+	 $('#type').on('change', function() {
+		$('#coupon-logo').attr('src', 'img/' + this.value + '.bmp');
+	  });
+	//  
+
+
 	
 	function setZero(n) {
 		return n < 10 ? "0" + n : n;
